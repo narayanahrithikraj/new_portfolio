@@ -116,4 +116,37 @@ document.addEventListener("DOMContentLoaded", function() {
       skillsScroller.style.animationPlayState = 'running';
     });
   }
+}); 
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (keep existing code until the fadeInOnScroll function)
+
+    // Improved scroll animations with Intersection Observer
+    const fadeElements = document.querySelectorAll('[data-scroll="fade-in"]');
+    
+    // More advanced options for the observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px" // Triggers when element is 50px from viewport bottom
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                
+                // Add staggered delay for child elements if needed
+                const children = entry.target.querySelectorAll('.animate-child');
+                children.forEach((child, index) => {
+                    child.style.transitionDelay = `${index * 0.1}s`;
+                });
+            }
+        });
+    }, observerOptions);
+
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // ... (rest of your existing code)
 });
