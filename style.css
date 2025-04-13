@@ -190,7 +190,7 @@ nav {
 
 .hero-subtitle {
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   color: var(--space-neon);
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
@@ -208,6 +208,24 @@ nav {
   -webkit-text-fill-color: transparent;
   opacity: 0;
   animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+.neon-text {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff;
+  animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff;
+  }
+  100% {
+      text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff;
+  }
 }
 
 .hero-description {
@@ -1006,6 +1024,10 @@ nav {
 
   .hero-subtitle {
     font-size: 1.3rem;
+  }
+
+  .neon-text {
+    font-size: 3rem;
   }
 
   .hero-description {
