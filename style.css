@@ -53,7 +53,7 @@ header {
   background-color: rgba(10, 14, 23, 0.8);
   backdrop-filter: blur(10px);
   padding: 1rem 0;
-  transition: all 0.3s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 header.scrolled {
@@ -95,7 +95,7 @@ nav {
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
@@ -107,7 +107,7 @@ nav {
   width: 0;
   height: 2px;
   background: linear-gradient(to right, var(--space-neon), var(--space-light-blue));
-  transition: width 0.3s ease;
+  transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-links a:hover::after {
@@ -122,7 +122,7 @@ nav {
   display: none;
   cursor: pointer;
   z-index: 1001;
-  transition: all 0.3s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .burger div {
@@ -130,7 +130,7 @@ nav {
   height: 3px;
   background-color: var(--space-text);
   margin: 5px;
-  transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .burger.active .line1 {
@@ -159,7 +159,7 @@ nav {
   z-index: 999;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-overlay.active {
@@ -193,7 +193,7 @@ nav {
   margin-bottom: 0.8rem;
   color: var(--space-neon);
   opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
+  animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   letter-spacing: 1px;
   font-weight: 300;
 }
@@ -207,7 +207,7 @@ nav {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
-  animation: fadeInUp 0.8s ease 0.3s forwards;
+  animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.15s forwards;
 }
 
 .neon-text {
@@ -216,15 +216,12 @@ nav {
   margin-bottom: 1.5rem;
   opacity: 0;
   text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff;
-  animation: fadeInUp 0.8s ease 0.3s forwards;
+  animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.15s forwards;
 }
 
 @keyframes glow {
-  0% {
+  0%, 100% {
     text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff;
-  }
-  100% {
-      text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff;
   }
 }
 
@@ -233,13 +230,13 @@ nav {
   margin-bottom: 2rem;
   color: var(--space-text-secondary);
   opacity: 0;
-  animation: fadeInUp 0.8s ease 0.6s forwards;
+  animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
 }
 
 .hero-buttons {
   margin-bottom: 2rem;
   opacity: 0;
-  animation: fadeInUp 0.8s ease 0.9s forwards;
+  animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.45s forwards;
 }
 
 .btn {
@@ -250,7 +247,7 @@ nav {
   border-radius: 50px;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -292,7 +289,7 @@ nav {
   background: rgba(255, 255, 255, 0.1);
   color: var(--space-text);
   font-size: 1.5rem;
-  transition: all 0.3s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   order: 1;
 }
@@ -309,8 +306,9 @@ nav {
   padding: 3rem 2rem;
   position: relative;
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transform: translateY(30px);
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container {
@@ -377,7 +375,7 @@ nav {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border: 5px solid rgba(57, 73, 171, 0.3);
   position: relative;
-  transition: transform 0.5s ease;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
 }
 
@@ -395,7 +393,7 @@ nav {
 }
 
 .float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /* Experience Section */
@@ -409,14 +407,14 @@ nav {
   background: rgba(26, 35, 126, 0.2);
   border-radius: 15px;
   padding: 2rem;
-  transition: all 0.3s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(57, 73, 171, 0.3);
   backdrop-filter: blur(10px);
 }
 
 .experience-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   border-color: var(--space-neon);
 }
 
@@ -454,14 +452,14 @@ nav {
   background: rgba(26, 35, 126, 0.2);
   border-radius: 15px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(57, 73, 171, 0.3);
   backdrop-filter: blur(10px);
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   border-color: var(--space-neon);
 }
 
@@ -474,11 +472,11 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .project-details {
@@ -519,7 +517,7 @@ nav {
   color: var(--space-neon);
   text-decoration: none;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   background: none;
   border: none;
 }
@@ -532,7 +530,7 @@ nav {
   width: 0;
   height: 2px;
   background: linear-gradient(to right, var(--space-neon), var(--space-light-blue));
-  transition: width 0.3s ease;
+  transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link:hover {
@@ -568,6 +566,7 @@ nav {
   display: flex;
   will-change: transform;
   position: relative;
+  animation: scroll 25s linear infinite;
 }
 
 .skill {
@@ -582,7 +581,7 @@ nav {
   padding: 1rem;
   margin: 0 1rem;
   border: 1px solid rgba(57, 73, 171, 0.3);
-  transition: all 0.5s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
   transform: translateZ(0);
   backdrop-filter: blur(10px);
@@ -591,8 +590,8 @@ nav {
 }
 
 .skill:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
   border-color: var(--space-neon);
   z-index: 2;
 }
@@ -606,7 +605,7 @@ nav {
   bottom: -10px;
   z-index: -1;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill:hover::before {
@@ -618,22 +617,22 @@ nav {
   height: 60px;
   object-fit: contain;
   margin-bottom: 0.5rem;
-  transition: transform 0.5s ease;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .skill span {
   font-size: 0.9rem;
   color: var(--space-text);
   text-align: center;
-  transition: transform 0.5s ease;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill:hover span {
-  transform: translateY(5px);
+  transform: translateY(3px);
 }
 
 /* Certifications Section */
@@ -647,14 +646,14 @@ nav {
   background: rgba(26, 35, 126, 0.2);
   border-radius: 15px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(57, 73, 171, 0.3);
   backdrop-filter: blur(10px);
 }
 
 .certification-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   border-color: var(--space-neon);
 }
 
@@ -697,7 +696,7 @@ nav {
   color: var(--space-neon);
   text-decoration: none;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   background: none;
   border: none !important;
 }
@@ -710,7 +709,7 @@ nav {
   width: 0;
   height: 2px;
   background: linear-gradient(to right, var(--space-neon), var(--space-light-blue));
-  transition: width 0.3s ease;
+  transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .certification-link:hover {
@@ -743,7 +742,7 @@ nav {
   border-radius: 15px;
   padding: 2rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(57, 73, 171, 0.3);
   backdrop-filter: blur(10px);
   text-decoration: none;
@@ -751,8 +750,8 @@ nav {
 }
 
 .contact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .contact-card i {
@@ -772,22 +771,22 @@ nav {
 
 .email:hover {
   border-color: #d81b60;
-  box-shadow: 0 15px 30px rgba(216, 27, 96, 0.3);
+  box-shadow: 0 10px 20px rgba(216, 27, 96, 0.3);
 }
 
 .linkedin:hover {
   border-color: #0077b5;
-  box-shadow: 0 15px 30px rgba(0, 119, 181, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 119, 181, 0.3);
 }
 
 .github:hover {
   border-color: #6e5494;
-  box-shadow: 0 15px 30px rgba(110, 84, 148, 0.3);
+  box-shadow: 0 10px 20px rgba(110, 84, 148, 0.3);
 }
 
 .instagram:hover {
   border-color: #e1306c;
-  box-shadow: 0 15px 30px rgba(225, 48, 108, 0.3);
+  box-shadow: 0 10px 20px rgba(225, 48, 108, 0.3);
 }
 
 .resume-download {
@@ -820,7 +819,7 @@ nav {
   text-decoration: none;
   position: relative;
   padding: 0.2rem 0;
-  transition: color 0.3s ease;
+  transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-links a::after {
@@ -831,7 +830,7 @@ nav {
   width: 0;
   height: 1px;
   background: linear-gradient(to right, var(--space-neon), var(--space-light-blue));
-  transition: width 0.3s ease;
+  transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-links a:hover {
@@ -846,7 +845,7 @@ nav {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -855,14 +854,11 @@ nav {
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(0px);
+  0%, 100% {
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
+    transform: translateY(-10px);
   }
 }
 
@@ -876,21 +872,17 @@ nav {
 }
 
 @keyframes floatParticle {
-  0% {
+  0%, 100% {
     transform: translateY(0) translateX(0);
   }
   50% {
-    transform: translateY(-100px) translateX(20px);
-  }
-  100% {
-    transform: translateY(0) translateX(0);
+    transform: translateY(-50px) translateX(10px);
   }
 }
 
 @keyframes twinkle {
-  0% { opacity: 0.1; }
+  0%, 100% { opacity: 0.1; }
   50% { opacity: 1; }
-  100% { opacity: 0.1; }
 }
 
 /* Mobile Menu Styles */
@@ -908,7 +900,7 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 2rem 0;
-    transition: all 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
     border-left: 1px solid rgba(57, 73, 171, 0.3);
@@ -921,8 +913,8 @@ nav {
   .nav-links li {
     margin: 1.5rem 0;
     opacity: 0;
-    transform: translateX(20px);
-    transition: all 0.3s ease;
+    transform: translateX(10px);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-links.active li {
@@ -932,22 +924,22 @@ nav {
 
   /* Staggered animation for menu items */
   .nav-links.active li:nth-child(1) {
-    transition-delay: 0.15s;
+    transition-delay: 0.1s;
   }
   .nav-links.active li:nth-child(2) {
-    transition-delay: 0.25s;
+    transition-delay: 0.15s;
   }
   .nav-links.active li:nth-child(3) {
-    transition-delay: 0.35s;
+    transition-delay: 0.2s;
   }
   .nav-links.active li:nth-child(4) {
-    transition-delay: 0.45s;
+    transition-delay: 0.25s;
   }
   .nav-links.active li:nth-child(5) {
-    transition-delay: 0.55s;
+    transition-delay: 0.3s;
   }
   .nav-links.active li:nth-child(6) {
-    transition-delay: 0.65s;
+    transition-delay: 0.35s;
   }
 
   .burger {
@@ -976,10 +968,6 @@ nav {
 
   .section-title {
     font-size: 2rem;
-  }
-
-  .skills-scroller {
-    animation: scroll 40s linear infinite;
   }
 }
 
