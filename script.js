@@ -128,7 +128,7 @@ function setupSkillsAnimation() {
     };
 }
 
-// Navbar scroll effect
+// Navbar scroll effect with faster animations
 function handleScroll() {
     const header = document.querySelector('header');
     if (!header) return;
@@ -141,9 +141,9 @@ function handleScroll() {
         header.classList.remove('scrolled');
     }
     
-    // Animate sections on scroll
+    // Animate sections on scroll with faster trigger
     const sections = document.querySelectorAll('.section');
-    const scrollTrigger = window.innerHeight / 1.3;
+    const scrollTrigger = window.innerHeight / 1.5; // Changed from 1.3 to 1.5 for earlier trigger
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -177,7 +177,7 @@ function setupMobileMenu() {
         body.classList.toggle('no-scroll');
     };
     
-    // Close menu function (separate from toggle for more control)
+    // Close menu function
     const closeMenu = () => {
         navLinks.classList.remove('active');
         burger.classList.remove('active');
@@ -196,36 +196,30 @@ function setupMobileMenu() {
     // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
-            // Only close if it's a hash link (section navigation)
             if (link.getAttribute('href').startsWith('#')) {
                 e.preventDefault();
                 closeMenu();
                 
-                // Get target section
                 const targetId = link.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (!targetElement) return;
                 
-                // Calculate scroll position
                 const headerHeight = document.querySelector('header').offsetHeight;
                 const targetPosition = targetElement.offsetTop - headerHeight;
                 
-                // Scroll after menu has closed
                 setTimeout(() => {
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
                     
-                    // Update URL
                     if (history.pushState) {
                         history.pushState(null, null, targetId);
                     } else {
                         window.location.hash = targetId;
                     }
-                }, 300); // Match this with your menu close transition duration
+                }, 200); // Reduced from 300ms to 200ms for faster response
             }
-            // For external links, let them navigate normally
         });
     });
     
@@ -256,7 +250,6 @@ function setupMobileMenu() {
 // Smooth scrolling for anchor links
 function setupSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        // Skip links handled by mobile menu
         if (anchor.closest('.nav-links')) return;
         
         anchor.addEventListener('click', function(e) {
@@ -276,7 +269,6 @@ function setupSmoothScrolling() {
                 behavior: 'smooth'
             });
             
-            // Update URL without jumping
             if (history.pushState) {
                 history.pushState(null, null, targetId);
             } else {
@@ -320,13 +312,13 @@ document.addEventListener('DOMContentLoaded', () => {
         window.clearTimeout(isScrolling);
         isScrolling = setTimeout(() => {
             handleScroll();
-        }, 66); // ~15fps
+        }, 50); // Reduced from 66ms to 50ms for faster response
     }, false);
     
     // Trigger initial scroll check
     handleScroll();
     
-    // Add animation styles dynamically
+    // Add faster animation styles dynamically
     const style = document.createElement('style');
     style.textContent = `
         @keyframes floatParticle {
@@ -362,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .section {
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Changed from 0.6s to 0.3s */
         }
         
         .no-scroll {
@@ -381,15 +373,15 @@ document.addEventListener('DOMContentLoaded', () => {
         
         /* Mobile menu transitions */
         .nav-links {
-            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+            transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1); /* Slightly faster */
         }
         
         .menu-overlay {
-            transition: opacity 0.3s ease;
+            transition: opacity 0.2s ease; /* Faster overlay fade */
         }
         
         .nav-links li {
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Faster menu items */
         }
     `;
     document.head.appendChild(style);
@@ -406,7 +398,7 @@ window.addEventListener('load', () => {
                     top: targetElement.offsetTop - headerHeight,
                     behavior: 'smooth'
                 });
-            }, 100);
+            }, 50); // Reduced from 100ms to 50ms
         }
     }
 });
