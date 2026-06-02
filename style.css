@@ -760,7 +760,7 @@ nav {
 }
 
 .email:hover {
-  border-color: #d81b60;
+  border-color: #0077b5;
   box-shadow: 0 15px 30px rgba(0, 119, 181, 0.3);
 }
 
@@ -770,12 +770,12 @@ nav {
 }
 
 .github:hover {
-  border-color: #6e5494;
+  border-color: #0077b5;
   box-shadow: 0 15px 30px rgba(0, 119, 181, 0.3);
 }
 
 .instagram:hover {
-  border-color: #e1306c;
+  border-color: #0077b5;
   box-shadow: 0 15px 30px rgba(0, 119, 181, 0.3);
 }
 
