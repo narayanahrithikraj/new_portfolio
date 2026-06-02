@@ -761,7 +761,7 @@ nav {
 
 .email:hover {
   border-color: #d81b60;
-  box-shadow: 0 15px 30px rgba(216, 27, 96, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 119, 181, 0.3);
 }
 
 .linkedin:hover {
@@ -771,12 +771,12 @@ nav {
 
 .github:hover {
   border-color: #6e5494;
-  box-shadow: 0 15px 30px rgba(110, 84, 148, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 119, 181, 0.3);
 }
 
 .instagram:hover {
   border-color: #e1306c;
-  box-shadow: 0 15px 30px rgba(225, 48, 108, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 119, 181, 0.3);
 }
 
 .resume-download {
